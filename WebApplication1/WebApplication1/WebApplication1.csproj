@@ -188,6 +188,7 @@
       <LastGenOutput>EFModel.cs</LastGenOutput>
       <DependentUpon>EFModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\trackthisorder.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
