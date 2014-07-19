@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/17/2014 19:49:06
+-- Date Created: 07/18/2014 20:42:22
 -- Generated from EDMX file: C:\Users\Steven\Documents\GitHub\EFModelProj\WebApplication1\WebApplication1\EFModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [GroupDB];
+USE [GroupDb];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +17,32 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_CustomersOrders]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_CustomersOrders];
+GO
+IF OBJECT_ID(N'[dbo].[FK_OrdersOrderDetails]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[OrderDetails] DROP CONSTRAINT [FK_OrdersOrderDetails];
+GO
+IF OBJECT_ID(N'[dbo].[FK_OrderDetailsProducts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_OrderDetailsProducts];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Customers]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Customers];
+GO
+IF OBJECT_ID(N'[dbo].[Orders]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Orders];
+GO
+IF OBJECT_ID(N'[dbo].[OrderDetails]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OrderDetails];
+GO
+IF OBJECT_ID(N'[dbo].[Products]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Products];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
